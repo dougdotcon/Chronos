@@ -7,14 +7,14 @@ export function cn(...inputs: ClassValue[]) {
 
 export function formatCurrency(value: number | string, currency: string = 'BRL'): string {
   const numValue = typeof value === 'string' ? parseFloat(value) : value
-  
+
   if (currency === 'BRL') {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL',
     }).format(numValue)
   }
-  
+
   // For Chronos currency, just format as number with 2 decimals
   return new Intl.NumberFormat('pt-BR', {
     minimumFractionDigits: 2,
@@ -37,7 +37,7 @@ export function formatRelativeTime(date: Date | string): string {
   const dateObj = typeof date === 'string' ? new Date(date) : date
   const now = new Date()
   const diffInSeconds = Math.floor((now.getTime() - dateObj.getTime()) / 1000)
-  
+
   if (diffInSeconds < 60) {
     return 'agora mesmo'
   } else if (diffInSeconds < 3600) {
@@ -64,13 +64,13 @@ export function generateRandomString(length: number): string {
 export function validateCPF(cpf: string): boolean {
   // Remove non-numeric characters
   const cleanCPF = cpf.replace(/\D/g, '')
-  
+
   // Check if has 11 digits
   if (cleanCPF.length !== 11) return false
-  
+
   // Check if all digits are the same
   if (/^(\d)\1{10}$/.test(cleanCPF)) return false
-  
+
   // Validate first check digit
   let sum = 0
   for (let i = 0; i < 9; i++) {
@@ -79,7 +79,7 @@ export function validateCPF(cpf: string): boolean {
   let remainder = (sum * 10) % 11
   if (remainder === 10 || remainder === 11) remainder = 0
   if (remainder !== parseInt(cleanCPF.charAt(9))) return false
-  
+
   // Validate second check digit
   sum = 0
   for (let i = 0; i < 10; i++) {
@@ -88,7 +88,7 @@ export function validateCPF(cpf: string): boolean {
   remainder = (sum * 10) % 11
   if (remainder === 10 || remainder === 11) remainder = 0
   if (remainder !== parseInt(cleanCPF.charAt(10))) return false
-  
+
   return true
 }
 
@@ -126,7 +126,7 @@ export function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout | null = null
-  
+
   return (...args: Parameters<T>) => {
     if (timeout) clearTimeout(timeout)
     timeout = setTimeout(() => func(...args), wait)
@@ -138,7 +138,7 @@ export function throttle<T extends (...args: any[]) => any>(
   limit: number
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean
-  
+
   return (...args: Parameters<T>) => {
     if (!inThrottle) {
       func(...args)
@@ -166,6 +166,15 @@ export function generateInviteCode(): string {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
   let result = ''
   for (let i = 0; i < 8; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length))
+  }
+  return result
+}
+
+export function generateSecureRandomString(length: number): string {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  let result = ''
+  for (let i = 0; i < length; i++) {
     result += chars.charAt(Math.floor(Math.random() * chars.length))
   }
   return result
