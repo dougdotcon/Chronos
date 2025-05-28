@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { signIn, getSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import { demoLogin } from '@/lib/demo-auth'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -41,20 +41,14 @@ export default function SignInPage() {
     }
 
     try {
-      const result = await signIn('credentials', {
-        email,
-        password,
-        redirect: false,
-      })
+      // Usar sistema demo
+      const user = demoLogin(email, password)
 
-      if (result?.error) {
-        setError(result.error)
+      if (user) {
+        // Login bem-sucedido
+        router.push('/dashboard')
       } else {
-        // Verificar se o login foi bem-sucedido
-        const session = await getSession()
-        if (session) {
-          router.push('/dashboard')
-        }
+        setError('Email ou senha incorretos')
       }
     } catch (error) {
       setError('Erro interno do servidor. Tente novamente.')
@@ -230,9 +224,10 @@ export default function SignInPage() {
           className="auth-demo"
         >
           <div className="auth-demo-card">
-            <h3>Credenciais Demo</h3>
-            <p>Email: demo@chronos.com</p>
-            <p>Senha: 123456</p>
+            <h3>🎮 Modo Demo Ativo</h3>
+            <p><strong>Email:</strong> demo@chronos.com</p>
+            <p><strong>Senha:</strong> qualquer senha</p>
+            <p className="text-sm opacity-75">Ou use qualquer email válido para criar conta demo</p>
           </div>
         </motion.div>
       </div>

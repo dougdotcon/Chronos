@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { demoRegister } from '@/lib/demo-auth'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -55,7 +56,8 @@ export default function SignUpPage() {
       setError('Email inválido')
       return false
     }
-    if (!validateCPF(formData.cpf)) {
+    // CPF opcional no modo demo
+    if (formData.cpf && !validateCPF(formData.cpf)) {
       setError('CPF inválido')
       return false
     }
@@ -92,29 +94,17 @@ export default function SignUpPage() {
     }
 
     try {
-      const response = await fetch('/api/auth/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          cpf: formData.cpf.replace(/\D/g, ''),
-          password: formData.password,
-        }),
-      })
+      // Usar sistema demo
+      const user = demoRegister(formData.email, formData.password, formData.name)
 
-      const data = await response.json()
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Erro ao criar conta')
+      if (user) {
+        // Registro bem-sucedido, redirecionar para dashboard
+        router.push('/dashboard')
+      } else {
+        setError('Erro ao criar conta demo')
       }
-
-      // Redirecionar para página de verificação de email
-      router.push('/auth/verify-email?email=' + encodeURIComponent(formData.email))
     } catch (error: any) {
-      setError(error.message)
+      setError(error.message || 'Erro ao criar conta')
     } finally {
       setIsLoading(false)
     }
@@ -167,7 +157,7 @@ export default function SignUpPage() {
           className="auth-progress"
         >
           <div className="auth-progress-bar">
-            <div 
+            <div
               className="auth-progress-fill"
               style={{ width: step === 1 ? '50%' : '100%' }}
             />
@@ -191,7 +181,7 @@ export default function SignUpPage() {
                 {step === 1 ? 'Criar sua conta' : 'Definir senha'}
               </CardTitle>
               <CardDescription className="auth-card-description">
-                {step === 1 
+                {step === 1
                   ? 'Preencha seus dados para começar'
                   : 'Crie uma senha segura para sua conta'
                 }
@@ -240,20 +230,27 @@ export default function SignUpPage() {
                   {/* CPF */}
                   <div className="auth-field">
                     <Label htmlFor="cpf" className="auth-label">
-                      CPF
+                      CPF <span className="text-sm opacity-60">(opcional no modo demo)</span>
                     </Label>
                     <div className="auth-input-container">
                       <CreditCard className="auth-input-icon" />
                       <Input
                         id="cpf"
                         type="text"
-                        placeholder="000.000.000-00"
+                        placeholder="000.000.000-00 (opcional)"
                         value={formData.cpf}
                         onChange={(e) => handleInputChange('cpf', e.target.value)}
                         className="auth-input"
                         maxLength={14}
                       />
                     </div>
+                  </div>
+
+                  {/* Demo Notice */}
+                  <div className="auth-demo-notice">
+                    <p className="text-sm text-center opacity-75">
+                      🎮 <strong>Modo Demo Ativo</strong> - Conta será criada automaticamente para demonstração
+                    </p>
                   </div>
 
                   {/* Error Message */}

@@ -166,12 +166,16 @@ export function Header() {
             </>
           ) : (
             <>
-              <button className="btn-login">
-                Entrar
-              </button>
-              <button className="btn-primary">
-                Cadastrar
-              </button>
+              <Button asChild variant="outline" className="btn-login">
+                <Link href="/auth/signin">
+                  Entrar
+                </Link>
+              </Button>
+              <Button asChild className="btn-primary">
+                <Link href="/auth/signup">
+                  Cadastrar
+                </Link>
+              </Button>
             </>
           )}
 

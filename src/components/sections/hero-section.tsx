@@ -131,15 +131,19 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="hero-cta"
           >
-            <button className="btn-hero-primary">
-              <Trophy className="w-5 h-5" />
-              Começar Agora
-            </button>
+            <Button asChild className="btn-hero-primary">
+              <Link href="/auth/signup">
+                <Trophy className="w-5 h-5" />
+                Começar Agora
+              </Link>
+            </Button>
 
-            <button className="btn-hero-secondary">
-              <Sparkles className="w-5 h-5" />
-              Experimentar Demo
-            </button>
+            <Button asChild variant="outline" className="btn-hero-secondary">
+              <Link href="/demo">
+                <Sparkles className="w-5 h-5" />
+                Experimentar Demo
+              </Link>
+            </Button>
           </motion.div>
 
         </div>

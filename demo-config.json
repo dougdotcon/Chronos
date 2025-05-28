@@ -1,0 +1,9 @@
+{
+  "mode": "demo",
+  "database": "memory",
+  "features": {
+    "realPayments": false,
+    "emailVerification": false,
+    "twoFactor": false
+  }
+}

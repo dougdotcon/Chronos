@@ -253,10 +253,12 @@ export function SweepstakesSection() {
             </div>
           </div>
 
-          <button className="btn-sweepstakes">
-            <Trophy className="w-5 h-5" />
-            Participar Agora
-          </button>
+          <Button asChild className="btn-sweepstakes">
+            <Link href="/auth/signup">
+              <Trophy className="w-5 h-5" />
+              Participar Agora
+            </Link>
+          </Button>
 
           <div className="sweepstakes-participants">
             <div className="participants-avatars">
