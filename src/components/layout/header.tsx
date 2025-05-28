@@ -65,8 +65,17 @@ export function Header() {
               <Link href="/sweepstakes" className="nav-link">
                 Sorteios
               </Link>
+              <Link href="/deposit" className="nav-link">
+                Depósito
+              </Link>
+              <Link href="/withdraw" className="nav-link">
+                Saque
+              </Link>
               <Link href="/history" className="nav-link">
                 Histórico
+              </Link>
+              <Link href="/audit" className="nav-link">
+                Auditoria
               </Link>
             </>
           ) : (
@@ -94,19 +103,23 @@ export function Header() {
               </div>
 
               {/* Deposit Button */}
-              <button className="btn-primary">
-                Depositar
-              </button>
+              <Button asChild className="btn-primary">
+                <Link href="/deposit">
+                  Depositar
+                </Link>
+              </Button>
 
               {/* Notifications */}
-              <Button variant="ghost" size="icon" className="relative">
-                <Bell className="h-5 w-5" />
-                <Badge
-                  variant="destructive"
-                  className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 text-xs"
-                >
-                  3
-                </Badge>
+              <Button asChild variant="ghost" size="icon" className="relative">
+                <Link href="/notifications">
+                  <Bell className="h-5 w-5" />
+                  <Badge
+                    variant="destructive"
+                    className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 text-xs"
+                  >
+                    3
+                  </Badge>
+                </Link>
               </Button>
 
               {/* User Menu */}
@@ -209,11 +222,46 @@ export function Header() {
                     Sorteios
                   </Link>
                   <Link
+                    href="/deposit"
+                    className="block py-2 text-sm font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Depósito
+                  </Link>
+                  <Link
+                    href="/withdraw"
+                    className="block py-2 text-sm font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Saque
+                  </Link>
+                  <Link
                     href="/history"
                     className="block py-2 text-sm font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Histórico
+                  </Link>
+                  <Link
+                    href="/notifications"
+                    className="block py-2 text-sm font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Notificações
+                  </Link>
+                  <Link
+                    href="/audit"
+                    className="block py-2 text-sm font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Auditoria
+                  </Link>
+                  <Link
+                    href="/profile"
+                    className="block py-2 text-sm font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Perfil
                   </Link>
                 </div>
               </>

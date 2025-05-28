@@ -19,22 +19,11 @@ import {
   Shield
 } from 'lucide-react'
 import { getInitials, formatRelativeTime } from '@/lib/utils'
+import { EmojiPicker } from '@/components/ui/emoji-picker'
 
 interface SweepstakeChatProps {
   sweepstakeId: string
   user: User
-}
-
-interface ChatMessage {
-  id: string
-  userId: string
-  userName: string
-  userImage?: string
-  message: string
-  timestamp: Date
-  isSystem?: boolean
-  isCreator?: boolean
-  isModerator?: boolean
 }
 
 // Mock data - em produção viria do WebSocket
@@ -87,61 +76,96 @@ const mockMessages: ChatMessage[] = [
 ]
 
 export function SweepstakeChat({ sweepstakeId, user }: SweepstakeChatProps) {
-  const [messages, setMessages] = useState<ChatMessage[]>(mockMessages)
+  const [messages, setMessages] = useState<ChatMessage[]>([])
   const [newMessage, setNewMessage] = useState('')
-  const [isConnected, setIsConnected] = useState(true)
+  const [error, setError] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  // WebSocket connection
+  const {
+    isConnected,
+    isAuthenticated,
+    joinSweepstake,
+    leaveSweepstake,
+    sendMessage
+  } = useWebSocket({
+    userId: user.id,
+    onMessage: (message: ChatMessage) => {
+      setMessages(prev => [...prev, message])
+    },
+    onError: (error) => {
+      setError(error.message)
+      setTimeout(() => setError(''), 5000)
+    }
+  })
 
   // Auto scroll to bottom
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  // Simular novas mensagens
+  // Join sweepstake room when component mounts
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (Math.random() > 0.7) { // 30% chance a cada 10 segundos
-        const randomMessages = [
-          'Boa sorte galera! 🍀',
-          'Vamos que vamos! 💪',
-          'Quem será o sortudo? 🤔',
-          'Energia positiva! ✨',
-          'Fé no resultado! 🙏'
-        ]
+    if (isAuthenticated && sweepstakeId) {
+      joinSweepstake(sweepstakeId)
 
-        const newMsg: ChatMessage = {
-          id: Date.now().toString(),
-          userId: `user${Math.floor(Math.random() * 10)}`,
-          userName: `Usuário ${Math.floor(Math.random() * 100)}`,
-          message: randomMessages[Math.floor(Math.random() * randomMessages.length)],
-          timestamp: new Date()
-        }
-
-        setMessages(prev => [...prev, newMsg])
+      // Add welcome message
+      const welcomeMessage: ChatMessage = {
+        id: 'welcome-' + Date.now(),
+        userId: 'system',
+        userName: 'Sistema',
+        message: `Bem-vindo ao chat do sorteio! 👋`,
+        timestamp: new Date(),
+        sweepstakeId,
+        isSystem: true
       }
-    }, 10000)
+      setMessages([welcomeMessage])
+    }
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => {
+      leaveSweepstake()
+    }
+  }, [isAuthenticated, sweepstakeId, joinSweepstake, leaveSweepstake])
+
+  const handleEmojiSelect = (emoji: string) => {
+    setNewMessage(prev => prev + emoji)
+    inputRef.current?.focus()
+  }
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!newMessage.trim()) return
 
-    const message: ChatMessage = {
-      id: Date.now().toString(),
-      userId: user.id,
-      userName: user.name || 'Usuário',
-      userImage: user.image || undefined,
-      message: newMessage.trim(),
-      timestamp: new Date()
+    // Validar comprimento da mensagem
+    if (newMessage.trim().length > 200) {
+      setError('Mensagem muito longa (máximo 200 caracteres)')
+      return
     }
 
-    setMessages(prev => [...prev, message])
-    setNewMessage('')
-    inputRef.current?.focus()
+    // Filtro básico de palavrões
+    const bannedWords = ['spam', 'hack', 'trapaça', 'roubo']
+    const messageText = newMessage.toLowerCase()
+    const hasBannedWord = bannedWords.some(word => messageText.includes(word))
+
+    if (hasBannedWord) {
+      setError('Mensagem contém conteúdo inadequado')
+      return
+    }
+
+    if (!isConnected || !isAuthenticated) {
+      setError('Não conectado ao chat')
+      return
+    }
+
+    const success = sendMessage(newMessage.trim())
+    if (success) {
+      setNewMessage('')
+      inputRef.current?.focus()
+    } else {
+      setError('Erro ao enviar mensagem')
+    }
   }
 
   const getMessageStyle = (message: ChatMessage) => {
@@ -162,9 +186,9 @@ export function SweepstakeChat({ sweepstakeId, user }: SweepstakeChatProps) {
             <MessageCircle className="w-5 h-5 text-chronos-gold" />
             Chat ao Vivo
             <div className="chat-status">
-              <div className={`chat-status-dot ${isConnected ? 'connected' : 'disconnected'}`} />
+              <div className={`chat-status-dot ${isConnected && isAuthenticated ? 'connected' : 'disconnected'}`} />
               <span className="chat-status-text">
-                {isConnected ? 'Conectado' : 'Desconectado'}
+                {isConnected && isAuthenticated ? 'Conectado' : 'Conectando...'}
               </span>
             </div>
           </CardTitle>
@@ -256,13 +280,10 @@ export function SweepstakeChat({ sweepstakeId, user }: SweepstakeChatProps) {
               />
 
               <div className="chat-input-actions">
-                <button
-                  type="button"
-                  className="chat-emoji-btn"
+                <EmojiPicker
+                  onEmojiSelect={handleEmojiSelect}
                   disabled={!isConnected}
-                >
-                  <Smile className="w-4 h-4" />
-                </button>
+                />
 
                 <Button
                   type="submit"
@@ -286,6 +307,20 @@ export function SweepstakeChat({ sweepstakeId, user }: SweepstakeChatProps) {
               </span>
             </div>
           </form>
+
+          {/* Error Message */}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="chat-error"
+            >
+              <div className="chat-error-icon">❌</div>
+              <div className="chat-error-text">
+                {error}
+              </div>
+            </motion.div>
+          )}
 
           {/* Connection Status */}
           {!isConnected && (
