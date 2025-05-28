@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Platform - Sorteios Exclusivos e Prêmios Incríveis</title>
+    <meta name="description" content="Participe dos sorteios mais exclusivos do Brasil com a Chronos Platform. Ganhe prêmios incríveis com transparência total garantida por blockchain e tecnologia de ponta.">
+    <meta name="keywords" content="sorteios, prêmios, blockchain, transparência, chronos, jogos, apostas seguras">
+    <meta name="author" content="Chronos Platform">
+    <meta property="og:title" content="Chronos Platform - Sorteios Exclusivos e Prêmios Incríveis">
+    <meta property="og:description" content="Participe dos sorteios mais exclusivos do Brasil. Ganhe prêmios incríveis com transparência total e tecnologia de ponta.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://chronosplatform.com.br">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <img src="logo.png" alt="Chronos" class="loader-logo">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="#" aria-label="Chronos Platform Home">
+                        <img src="logo.png" alt="Chronos Platform" class="logo">
+                        <span class="logo-text">CHRONOS</span>
+                    </a>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#como-funciona" class="nav-link">Como Funciona</a>
+                    <a href="#premios" class="nav-link">Prêmios</a>
+                    <a href="#transparencia" class="nav-link">Transparência</a>
+                    <button class="btn-login" aria-label="Entrar na sua conta">Entrar</button>
+                    <button class="btn-primary" aria-label="Cadastrar nova conta">Cadastrar</button>
+                </div>
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu mobile">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-statue left-statue"></div>
+            <div class="hero-statue right-statue"></div>
+            <div class="particles-container" id="particles-container"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">
+                    <span class="hero-title-main">CHRONOS</span>
+                    <span class="hero-title-sub">PLATFORM</span>
+                </h1>
+                <p class="hero-description">
+                    A plataforma de sorteios mais transparente e segura do Brasil.
+                    Participe de sorteios exclusivos com tecnologia blockchain e ganhe prêmios incríveis.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-value" data-count="50000">R$ 0</div>
+                        <div class="stat-label">Jackpot Atual</div>
+                    </div>
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-value" data-count="15247">0</div>
+                        <div class="stat-label">Participantes Ativos</div>
+                    </div>
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-value" data-count="2100000">R$ 0</div>
+                        <div class="stat-label">Prêmios Pagos</div>
+                    </div>
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-value" data-count="24">0h</div>
+                        <div class="stat-label">Próximo Sorteio</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <button class="btn-hero-primary" aria-label="Participar Agora">
+                        <i class="fas fa-rocket"></i>
+                        Participar Agora
+                    </button>
+                    <button class="btn-hero-secondary" aria-label="Assistir demonstração">
+                        <i class="fas fa-play"></i>
+                        Ver Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator" aria-label="Rolar para baixo">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Current Sweepstakes -->
+    <section class="current-sweepstakes">
+        <div class="container">
+            <div class="sweepstakes-card" data-aos="zoom-in">
+                <div class="sweepstakes-header">
+                    <h2>Sorteio Ativo Agora</h2>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        AO VIVO
+                    </div>
+                </div>
+                <div class="sweepstakes-info">
+                    <div class="sweepstakes-stat">
+                        <span class="stat-number" data-count="15000">0</span>
+                        <span class="stat-text">Participantes</span>
+                    </div>
+                    <div class="sweepstakes-stat">
+                        <span class="stat-number">R$ 25.500</span>
+                        <span class="stat-text">Prêmio Total</span>
+                    </div>
+                    <div class="sweepstakes-timer">
+                        <span class="timer-label">Encerra em:</span>
+                        <div class="timer" id="countdown">
+                            <span class="timer-unit">
+                                <span class="timer-number" id="hours">23</span>
+                                <span class="timer-text">h</span>
+                            </span>
+                            <span class="timer-unit">
+                                <span class="timer-number" id="minutes">45</span>
+                                <span class="timer-text">m</span>
+                            </span>
+                            <span class="timer-unit">
+                                <span class="timer-number" id="seconds">32</span>
+                                <span class="timer-text">s</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-sweepstakes" aria-label="Entrar no sorteio atual">
+                    <i class="fas fa-ticket-alt"></i>
+                    Entrar no Sorteio - R$ 8,50
+                </button>
+                <div class="sweepstakes-participants">
+                    <div class="participants-avatars">
+                        <div class="participant-avatar"><i class="fas fa-user"></i></div>
+                        <div class="participant-avatar"><i class="fas fa-user"></i></div>
+                        <div class="participant-avatar"><i class="fas fa-user"></i></div>
+                        <div class="participant-avatar"><i class="fas fa-user"></i></div>
+                        <div class="participant-avatar"><i class="fas fa-user"></i></div>
+                        <div class="participant-count">+14.995</div>
+                    </div>
+                    <div class="participants-message">Pessoas estão participando deste sorteio agora!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="como-funciona">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Como Funciona</h2>
+                <p class="section-subtitle">Simplicidade, transparência e segurança em cada sorteio</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="feature-title">1. Cadastre-se</h3>
+                    <p class="feature-description">
+                        Crie sua conta em menos de 2 minutos. Verificação rápida e segura.
+                    </p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="feature-title">2. Recarregue Chronos</h3>
+                    <p class="feature-description">
+                        Adicione créditos via Pix, cartão ou PayPal. Transações instantâneas e seguras.
+                    </p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3 class="feature-title">3. Escolha seu Sorteio</h3>
+                    <p class="feature-description">
+                        Participe de sorteios individuais, desafios 1x1 ou batalhas em grupo.
+                    </p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="feature-title">4. Ganhe Prêmios</h3>
+                    <p class="feature-description">
+                        Receba seus prêmios instantaneamente. Saque quando quiser, sem burocracias.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section class="prizes" id="premios">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Modalidades de Sorteio</h2>
+                <p class="section-subtitle">Escolha a modalidade que mais combina com você</p>
+            </div>
+            <div class="prizes-grid">
+                <div class="prize-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="prize-header">
+                        <h3 class="prize-title">Individual</h3>
+                        <div class="prize-badge">Mais Popular</div>
+                    </div>
+                    <div class="prize-amount">R$ 1,50 - R$ 32,50</div>
+                    <ul class="prize-features">
+                        <li><i class="fas fa-check"></i> 2 a 50 participantes</li>
+                        <li><i class="fas fa-check"></i> Sorteio automático</li>
+                        <li><i class="fas fa-check"></i> Prêmio instantâneo</li>
+                        <li><i class="fas fa-check"></i> Transparência total</li>
+                    </ul>
+                    <button class="btn-prize" aria-label="Participar de sorteio individual">Participar</button>
+                </div>
+                <div class="prize-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="prize-header">
+                        <h3 class="prize-title">Desafio 1x1</h3>
+                        <div class="prize-badge">Adrenalina</div>
+                    </div>
+                    <div class="prize-amount">R$ 2,50 - R$ 32,50</div>
+                    <ul class="prize-features">
+                        <li><i class="fas fa-check"></i> Apenas 2 jogadores</li>
+                        <li><i class="fas fa-check"></i> Salas públicas/privadas</li>
+                        <li><i class="fas fa-check"></i> Chat em tempo real</li>
+                        <li><i class="fas fa-check"></i> Resultado imediato</li>
+                    </ul>
+                    <button class="btn-prize" aria-label="Participar de desafio 1x1">Desafiar</button>
+                </div>
+                <div class="prize-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="prize-header">
+                        <h3 class="prize-title">Batalha em Grupo</h3>
+                        <div class="prize-badge">Épico</div>
+                    </div>
+                    <div class="prize-amount">R$ 4,50 - R$ 32,50</div>
+                    <ul class="prize-features">
+                        <li><i class="fas fa-check"></i> Equipes de 5-10 players</li>
+                        <li><i class="fas fa-check"></i> Estratégia em grupo</li>
+                        <li><i class="fas fa-check"></i> Prêmios maiores</li>
+                        <li><i class="fas fa-check"></i> Rankings mensais</li>
+                    </ul>
+                    <button class="btn-prize" aria-label="Formar equipe para batalha em grupo">Formar Equipe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency Section -->
+    <section class="transparency" id="transparencia">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Transparência Total</h2>
+                <p class="section-subtitle">Tecnologia blockchain e auditoria independente garantem a confiabilidade de cada sorteio</p>
+            </div>
+            <div class="transparency-grid">
+                <div class="transparency-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="transparency-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Algoritmo Verificável</h3>
+                    <p>Cada sorteio usa criptografia SHA-256 com seed público, permitindo verificação independente dos resultados.</p>
+                </div>
+                <div class="transparency-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="transparency-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Auditoria em Tempo Real</h3>
+                    <p>Todos os sorteios são registrados em blockchain e podem ser auditados por qualquer participante.</p>
+                </div>
+                <div class="transparency-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="transparency-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Segurança Bancária</h3>
+                    <p>Seus dados e transações são protegidos com criptografia de nível bancário e certificação SSL.</p>
+                </div>
+                <div class="transparency-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="transparency-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Estatísticas Públicas</h3>
+                    <p>Todos os resultados e estatísticas de sorteios são públicos e podem ser verificados a qualquer momento.</p>
+                </div>
+            </div>
+            <div class="blockchain-verification" data-aos="fade-up">
+                <h3>Verifique nosso último bloco</h3>
+                <div class="blockchain-hash">
+                    <code>0x7a16bd2e5894b5927c397e42f0e72334f050c858f729a5c0fa43c25d76f276cc</code>
+                    <button class="btn-verify" aria-label="Verificar hash na blockchain">Verificar <i class="fas fa-external-link-alt"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">O Que Nossos Usuários Dizem</h2>
+                <p class="section-subtitle">Milhares de pessoas já ganharam prêmios incríveis na Chronos Platform</p>
+            </div>
+            <div class="testimonials-slider" id="testimonials-slider">
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Ganhei R$ 15.000 no meu terceiro sorteio! A plataforma é transparente e os pagamentos são instantâneos."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Carlos M.</h4>
+                                <span>São Paulo, SP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Adoro os desafios 1x1! É pura adrenalina e já consegui multiplicar meu investimento várias vezes."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Ana L.</h4>
+                                <span>Rio de Janeiro, RJ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"A transparência é impressionante. Posso verificar cada sorteio e tenho certeza de que tudo é justo."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Roberto S.</h4>
+                                <span>Belo Horizonte, MG</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-nav">
+                    <button class="nav-prev" aria-label="Depoimento anterior"><i class="fas fa-chevron-left"></i></button>
+                    <div class="nav-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="nav-next" aria-label="Próximo depoimento"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-block" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number" data-count="97">0</div>
+                    <div class="stat-percent">%</div>
+                    <div class="stat-description">Taxa de Satisfação</div>
+                </div>
+                <div class="stat-block" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number" data-count="175000">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-description">Usuários Registrados</div>
+                </div>
+                <div class="stat-block" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number" data-count="6500000">R$ 0</div>
+                    <div class="stat-description">Em Prêmios Sorteados</div>
+                </div>
+                <div class="stat-block" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-number" data-count="180">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-description">Sorteios Diários</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Pronto Para Ganhar?</h2>
+                <p>Junte-se a milhares de pessoas que já estão ganhando prêmios incríveis na Chronos Platform</p>
+                <div class="cta-benefits">
+                    <div class="benefit">
+                        <i class="fas fa-gift"></i>
+                        <span>R$ 10 de bônus ao se cadastrar</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-zap"></i>
+                        <span>Sorteios a cada 5 minutos</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Saques instantâneos</span>
+                    </div>
+                </div>
+                <button class="btn-final-cta" aria-label="Cadastrar e receber bônus">
+                    <i class="fas fa-rocket"></i>
+                    Cadastrar e Ganhar R$ 10
+                </button>
+                <p class="cta-disclaimer">* Bônus válido para novos usuários. Termos e condições aplicáveis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Chronos Platform" class="footer-logo-img">
+                        <span class="footer-logo-text">CHRONOS</span>
+                    </div>
+                    <p class="footer-description">
+                        A plataforma de sorteios mais transparente e segura do Brasil.
+                        Tecnologia de ponta para garantir fairness em cada sorteio.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Plataforma</h4>
+                    <ul class="footer-links">
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#premios">Modalidades</a></li>
+                        <li><a href="#transparencia">Transparência</a></li>
+                        <li><a href="#">Regulamento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Status da Plataforma</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Jogo Responsável</a></li>
+                        <li><a href="#">Licenças</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Chronos Platform. Todos os direitos reservados.</p>
+                <p class="footer-disclaimer">
+                    Plataforma licenciada e regulamentada. Jogue com responsabilidade. +18 anos.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent" id="cookie-consent">
+        <div class="cookie-content">
+            <p>Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#">Política de Privacidade</a>.</p>
+            <div class="cookie-buttons">
+                <button class="btn-cookie-accept" aria-label="Aceitar cookies">Aceitar</button>
+                <button class="btn-cookie-settings" aria-label="Configurar cookies">Configurações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal Container -->
+    <div class="modal-container" id="modal-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

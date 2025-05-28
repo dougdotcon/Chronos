@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Platform - Dashboard</title>
+    <meta name="description" content="Dashboard da Chronos Platform - Gerencie seus sorteios e acompanhe seus ganhos">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="chronos-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="logo.png" alt="Chronos" class="logo">
+                <span class="logo-text">CHRONOS</span>
+            </div>
+            <div class="header-right">
+                <div class="header-icons">
+                    <button class="icon-btn" aria-label="Notificações">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="icon-btn" aria-label="Perfil">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+                <button class="btn-deposit">
+                    <i class="fas fa-plus"></i>
+                    Depositar
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background">
+                <div class="statue-left"></div>
+                <div class="statue-right"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">CHRONOS</h1>
+                
+                <!-- Metrics Cards -->
+                <div class="metrics-grid">
+                    <div class="metric-card hexagon">
+                        <div class="metric-icon">💰</div>
+                        <div class="metric-value">R$ 11.000</div>
+                        <div class="metric-label">Jackpot</div>
+                    </div>
+                    <div class="metric-card hexagon">
+                        <div class="metric-icon">📅</div>
+                        <div class="metric-value">R$ 500</div>
+                        <div class="metric-label">Diária</div>
+                    </div>
+                    <div class="metric-card hexagon">
+                        <div class="metric-icon">👥</div>
+                        <div class="metric-value">15.247</div>
+                        <div class="metric-label">Participantes</div>
+                    </div>
+                    <div class="metric-card hexagon">
+                        <div class="metric-icon">🏆</div>
+                        <div class="metric-value">R$ 2.100</div>
+                        <div class="metric-label">Seus Ganhos</div>
+                    </div>
+                </div>
+
+                <button class="btn-cta">
+                    <i class="fas fa-trophy"></i>
+                    Ver Prêmios
+                </button>
+            </div>
+        </section>
+
+        <!-- Sweepstakes Section -->
+        <section class="sweepstakes-section">
+            <div class="sweepstakes-background">
+                <div class="greek-statue-left"></div>
+                <div class="greek-statue-right"></div>
+            </div>
+            
+            <div class="sweepstakes-card">
+                <div class="sweepstakes-header">
+                    <h2>Sorteio Ativo</h2>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        AO VIVO
+                    </div>
+                </div>
+                
+                <div class="sweepstakes-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15.000</span>
+                        <span class="stat-label">Participantes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">R$ 900</span>
+                        <span class="stat-label">Votos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">00:00</span>
+                        <span class="stat-label">Duração</span>
+                    </div>
+                </div>
+
+                <button class="btn-sweepstakes">
+                    <i class="fas fa-ticket-alt"></i>
+                    Entrar no Sweepstakes
+                </button>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <div class="container">
+                <h2 class="section-title">Ações Rápidas</h2>
+                <div class="actions-grid">
+                    <a href="sweepstakes.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-dice"></i>
+                        </div>
+                        <h3>Sorteios</h3>
+                        <p>Participe dos sorteios ativos</p>
+                    </a>
+                    <a href="profile.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>Histórico</h3>
+                        <p>Veja suas transações</p>
+                    </a>
+                    <a href="#" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3>Carteira</h3>
+                        <p>Gerencie seus Chronos</p>
+                    </a>
+                    <a href="#" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3>Configurações</h3>
+                        <p>Ajuste suas preferências</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="sweepstakes.html" class="nav-item">
+            <i class="fas fa-dice"></i>
+            <span>Sorteios</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Stats</span>
+        </a>
+    </nav>
+
+    <script src="chronos-script.js"></script>
+</body>
+</html>

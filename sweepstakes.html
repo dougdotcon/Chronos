@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Platform - Sorteios</title>
+    <meta name="description" content="Participe dos sorteios da Chronos Platform">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="chronos-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="sweepstakes-page">
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="Chronos" class="sidebar-logo">
+                <span class="sidebar-title">CHRONOS</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="sweepstakes.html" class="sidebar-link active">
+                    <i class="fas fa-dice"></i>
+                    <span>Jackpots</span>
+                </a>
+                <a href="profile.html" class="sidebar-link">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-wallet"></i>
+                    <span>Wallet</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="page-header">
+                <div class="header-content">
+                    <h1 class="page-title">Enter Sweepstakes</h1>
+                    <button class="btn-view-sweepstakes">
+                        <i class="fas fa-eye"></i>
+                        View Sweepstakes
+                    </button>
+                </div>
+            </header>
+
+            <!-- Sweepstakes Grid -->
+            <section class="sweepstakes-grid">
+                <div class="sweepstakes-card-item">
+                    <div class="card-header">
+                        <div class="jackpot-amount">R$ 900</div>
+                        <div class="card-status active">Ativo</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Sorteio Individual</h3>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>12/50 participantes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>5 min restantes</span>
+                            </div>
+                        </div>
+                        <div class="entry-fee">
+                            <span>Taxa de entrada:</span>
+                            <strong>R$ 8,50</strong>
+                        </div>
+                    </div>
+                    <button class="btn-enter-sweepstakes">
+                        <i class="fas fa-ticket-alt"></i>
+                        Participar
+                    </button>
+                </div>
+
+                <div class="sweepstakes-card-item">
+                    <div class="card-header">
+                        <div class="jackpot-amount">R$ 700</div>
+                        <div class="card-status active">Ativo</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Desafio 1x1</h3>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>1/2 participantes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>Aguardando oponente</span>
+                            </div>
+                        </div>
+                        <div class="entry-fee">
+                            <span>Taxa de entrada:</span>
+                            <strong>R$ 16,50</strong>
+                        </div>
+                    </div>
+                    <button class="btn-enter-sweepstakes">
+                        <i class="fas fa-sword"></i>
+                        Desafiar
+                    </button>
+                </div>
+
+                <div class="sweepstakes-card-item">
+                    <div class="card-header">
+                        <div class="jackpot-amount">R$ 1.200</div>
+                        <div class="card-status filling">Enchendo</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Batalha em Grupo</h3>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>8/20 participantes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>15 min restantes</span>
+                            </div>
+                        </div>
+                        <div class="entry-fee">
+                            <span>Taxa de entrada:</span>
+                            <strong>R$ 32,50</strong>
+                        </div>
+                    </div>
+                    <button class="btn-enter-sweepstakes">
+                        <i class="fas fa-users"></i>
+                        Formar Equipe
+                    </button>
+                </div>
+
+                <div class="sweepstakes-card-item">
+                    <div class="card-header">
+                        <div class="jackpot-amount">R$ 450</div>
+                        <div class="card-status active">Ativo</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Sorteio Rápido</h3>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>25/30 participantes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>2 min restantes</span>
+                            </div>
+                        </div>
+                        <div class="entry-fee">
+                            <span>Taxa de entrada:</span>
+                            <strong>R$ 4,50</strong>
+                        </div>
+                    </div>
+                    <button class="btn-enter-sweepstakes">
+                        <i class="fas fa-bolt"></i>
+                        Participar
+                    </button>
+                </div>
+
+                <div class="sweepstakes-card-item">
+                    <div class="card-header">
+                        <div class="jackpot-amount">R$ 2.500</div>
+                        <div class="card-status premium">Premium</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Sorteio Premium</h3>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>5/10 participantes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>30 min restantes</span>
+                            </div>
+                        </div>
+                        <div class="entry-fee">
+                            <span>Taxa de entrada:</span>
+                            <strong>R$ 32,50</strong>
+                        </div>
+                    </div>
+                    <button class="btn-enter-sweepstakes premium">
+                        <i class="fas fa-crown"></i>
+                        Participar Premium
+                    </button>
+                </div>
+
+                <div class="sweepstakes-card-item">
+                    <div class="card-header">
+                        <div class="jackpot-amount">R$ 150</div>
+                        <div class="card-status active">Ativo</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Sorteio Iniciante</h3>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>18/25 participantes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>8 min restantes</span>
+                            </div>
+                        </div>
+                        <div class="entry-fee">
+                            <span>Taxa de entrada:</span>
+                            <strong>R$ 1,50</strong>
+                        </div>
+                    </div>
+                    <button class="btn-enter-sweepstakes">
+                        <i class="fas fa-play"></i>
+                        Participar
+                    </button>
+                </div>
+            </section>
+
+            <!-- Create Sweepstakes -->
+            <section class="create-section">
+                <div class="create-card">
+                    <h2>Criar Novo Sorteio</h2>
+                    <p>Crie seu próprio sorteio privado e convide amigos</p>
+                    <button class="btn-create">
+                        <i class="fas fa-plus"></i>
+                        Criar Sorteio
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="sweepstakes.html" class="nav-item active">
+            <i class="fas fa-dice"></i>
+            <span>Sorteios</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Stats</span>
+        </a>
+    </nav>
+
+    <script src="chronos-script.js"></script>
+</body>
+</html>
